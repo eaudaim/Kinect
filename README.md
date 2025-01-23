@@ -29,8 +29,14 @@ Avant de commencer, assurez-vous que vous avez les éléments suivants :
 1. Clonez le dépôt : ```
  git clone https://github.com/eaudaim/Kinect.git ```
 
-2. Exécutez le script d'installation et de lancement : python3 setup_and_run.py
-3. Interagissez avec le scanner Kinect :
+2. Déplacez vous dans le dossier : ```
+cd Kinect ```
+
+
+3. Exécutez le script d'installation et de lancement : ```
+ python3 setup_and_run.py ```
+
+4. Interagissez avec le scanner Kinect :
 * Une fenêtre s'ouvre affichant les données de profondeur capturées par le Kinect.
 * Vous pouvez interrompre le script à tout moment en appuyant sur Ctrl+C.
 * Le script nettoie automatiquement la mémoire et libère toutes les ressources utilisées lors de l'interruption.
