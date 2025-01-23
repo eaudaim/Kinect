@@ -1,74 +1,60 @@
-# Kinect Project
+# Kinect
 
-Bienvenue sur le dépôt **Kinect**. Ce projet utilise la Kinect 360 pour des applications de vision par ordinateur, avec une intégration basée sur OpenCV et des fonctionnalités interactives adaptées à divers projets.
+Un projet Python utilisant la Kinect pour capturer et visualiser des données de profondeur en temps réel.
 
-## Fonctionnalités principales
+## Description
 
-- **Traitement en temps réel** : Analyse des données capturées par la Kinect.
-- **Applications interactives** : Détection de mouvement, suivi et plus encore.
-- **Extensibilité** : Facilité d'ajout de nouveaux modules ou fonctionnalités.
+Ce projet a été conçu pour exploiter les capacités de la Kinect en combinant les bibliothèques OpenCV, Matplotlib, et libfreenect. Il permet :
+
+* L'affichage en temps réel des données de profondeur capturées par le capteur infrarouge de la Kinect.
+* L'application d'une colormap adaptée pour visualiser les variations de distance.
+* Une installation simplifiée grâce à un script automatisé qui configure toutes les dépendances nécessaires.
+
+## Fonctionnalités
+
+* Capture des données de profondeur : Accède directement aux données de profondeur issues du capteur infrarouge.
+* Visualisation en temps réel : Affiche les données avec une colormap intuitive, reflétant les variations de distance.
+* Facilité d'installation : Un script unique installe toutes les dépendances, y compris libfreenect.
+
+## Prérequis
+
+Avant de commencer, assurez-vous que vous avez les éléments suivants :
+
+* Une Kinect (modèle 360 testé)
+* Python 3.7+ installé sur votre système
+* Une distribution Linux (Ubuntu recommandé)
 
 ## Installation
 
-Suivez ces étapes pour configurer le projet :
-
-1. **Cloner le dépôt :**
-git clone https://github.com/eaudaim/Kinect.git
-cd Kinect
-text
-
-2. **Installer les dépendances :**
-
-Assurez-vous que Python est installé. Créez un environnement virtuel et installez les dépendances :
-python -m venv venv
-source venv/bin/activate # Sous Windows : venv\Scripts\activate
-pip install -r requirements.txt
-text
-
-3. **Configurer la Kinect :**
-
-- Installez les pilotes nécessaires pour la Kinect.
-- Configurez libfreenect :
-  - Linux : Suivez la documentation de libfreenect pour installer les dépendances.
-  - Windows/MacOS : Consultez les instructions spécifiques à votre OS.
+1. Clonez le dépôt : git clone https://github.com/eaudaim/Kinect.git cd Kinect
+2. Exécutez le script d'installation et de lancement : python3 setup_and_run.py
+3. Interagissez avec le scanner Kinect :
+* Une fenêtre s'ouvre affichant les données de profondeur capturées par le Kinect.
+* Vous pouvez interrompre le script à tout moment en appuyant sur Ctrl+C.
+* Le script nettoie automatiquement la mémoire et libère toutes les ressources utilisées lors de l'interruption.
 
 ## Structure du projet
 
-- `src/` : Code source principal pour l'intégration Kinect.
-- `docs/` : Documentation du projet.
-- `tests/` : Scripts pour tester les fonctionnalités.
+* scanner3D_kinect.py : Le script principal qui gère la capture et l'affichage des données de profondeur en temps réel.
+* setup_and_run.py : Un script automatisé qui installe les dépendances nécessaires (y compris libfreenect) et lance le programme principal.
+* requirements.txt : Une liste des dépendances Python requises pour exécuter le projet.
+* README.md : Le fichier que vous lisez actuellement, contenant les instructions et une description complète du projet.
 
-## Développement
+## Dépannage
 
-### Configuration de l'environnement
+Si vous rencontrez des problèmes lors de l'installation ou de l'exécution, voici quelques étapes de dépannage :
 
-Assurez-vous que les outils suivants sont installés :
+1. Erreur liée à libfreenect :
+* Assurez-vous que le dossier libfreenect est présent dans le répertoire du projet.
+* Vérifiez que les dépendances système pour libfreenect sont installées (voir libfreenect GitHub : https://github.com/OpenKinect/libfreenect).
 
-- Python 3.8+
-- OpenCV
-- libfreenect
+2. Problèmes avec cv2.imshow :
+* Assurez-vous que vous avez installé les bibliothèques nécessaires pour la gestion des fenêtres GUI, telles que libgtk2.0-dev sur Ubuntu. sudo apt-get install libgtk2.0-dev
 
-### Démarrer l'application
+3. Problèmes de permission USB :
+* Si la Kinect n'est pas détectée, vous pourriez avoir besoin de permissions supplémentaires : sudo chmod 666 /dev/bus/usb/XXX/YYY
+* Remplacez XXX et YYY par les numéros de bus et de périphérique USB associés à la Kinect (vous pouvez les trouver avec lsusb).
 
-Lancez le projet avec :
-
-python src/main.py
-text
-
-## Contribution
-
-Les contributions sont les bienvenues ! Pour contribuer :
-
-1. Forkez ce dépôt.
-2. Créez une branche pour vos modifications : `git checkout -b ma-branche`.
-3. Effectuez vos changements et commitez-les : `git commit -m "Description des modifications"`.
-4. Poussez la branche : `git push origin ma-branche`.
-5. Ouvrez une pull request.
-
-## Licence
-
-Ce projet est sous licence MIT. Consultez le fichier LICENSE pour plus de détails.
-
-## Support
-
-Pour toute question ou demande d'aide, contactez-moi à eaudaim@exemple.com.
+4. Erreur de dépendance lors de l'installation :
+* Si une dépendance ne peut pas être installée via pip, vérifiez les messages d'erreur et installez les paquets manquants manuellement.
+* Par exemple, pour des dépendances système manquantes : sudo apt-get install python3-dev build-essential cmake
