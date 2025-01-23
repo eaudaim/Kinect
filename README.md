@@ -47,3 +47,44 @@ cd Kinect ```
 * setup_and_run.py : Un script automatisé qui installe les dépendances nécessaires (y compris libfreenect) et lance le programme principal.
 * requirements.txt : Une liste des dépendances Python requises pour exécuter le projet.
 * README.md : Le fichier que vous lisez actuellement, contenant les instructions et une description complète du projet.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+# Kinect
+A Python project using the Kinect to capture and visualize real-time depth data.
+
+## Description
+This project was designed to leverage the capabilities of the Kinect by combining the OpenCV, Matplotlib, and libfreenect libraries. It provides:
+
+Real-time display of depth data captured by the Kinect's infrared sensor.
+Application of an adapted colormap to visualize distance variations.
+Simplified installation via an automated script that configures all necessary dependencies.
+## Features
+Depth data capture: Directly accesses depth data from the infrared sensor.
+Real-time visualization: Displays the data with an intuitive colormap, reflecting distance variations.
+Easy installation: A single script installs all dependencies, including libfreenect.
+## Prerequisites
+Before getting started, make sure you have the following:
+
+A Kinect (tested on the 360 model)
+Python 3.7+ installed on your system
+A Linux distribution (Ubuntu recommended)
+Installation
+Clone the repository: git clone https://github.com/eaudaim/Kinect.git
+
+Navigate to the folder: cd Kinect
+
+Run the installation and launch script: python3 setup_and_run.py
+
+Interact with the Kinect scanner:
+
+A window will open, displaying the depth data captured by the Kinect.
+You can interrupt the script at any time by pressing Ctrl+C.
+The script automatically clears memory and releases all used resources upon interruption.
+Project Structure
+scanner3D_kinect.py: The main script that handles depth data capture and real-time visualization.
+setup_and_run.py: An automated script that installs the required dependencies (including libfreenect) and launches the main program.
+requirements.txt: A list of Python dependencies required to run the project.
+README.md: This file you are currently reading, containing instructions and a complete project description.
