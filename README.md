@@ -26,7 +26,7 @@ Avant de commencer, assurez-vous que vous avez les éléments suivants :
 
 ## Installation
 
-1. Clonez le dépôt : git clone https://github.com/eaudaim/Kinect.git cd Kinect
+1. Clonez le dépôt : git clone https://github.com/eaudaim/Kinect.git
 2. Exécutez le script d'installation et de lancement : python3 setup_and_run.py
 3. Interagissez avec le scanner Kinect :
 * Une fenêtre s'ouvre affichant les données de profondeur capturées par le Kinect.
